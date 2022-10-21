@@ -1,0 +1,27 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Checkbox style */
+input + label {
+  display: flex;
+  margin: auto 0px;
+  width: 18px;
+  height: 18px;
+  border: 2px solid #673ae5;
+  border-radius: 2px;
+  cursor: pointer;
+}
+input:checked + label:after {
+  position: relative;
+  top: -5px;
+  left: 0px;
+  content: '\2714';
+  font-size: 20px;
+}
+input[type='checkbox'] {
+  display: none;
+}
