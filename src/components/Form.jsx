@@ -8,13 +8,12 @@ import { TermsAndConditions } from "./TermsAndConditions"
 
 export const Form = ({ onSubmit, handleChange, fields, submitActive, mode, textSubmit }) => {
   const [showPassword, setShowPassword] = useState(false)
-
   /**
-   * @desc This function is used to show all inputs in the form
+   * @desc This is an Object that contains the fields that are required to be filled in order to submit the form
    * @returns {JSX} - All the inputs of the form
-   * @example <InputFields />
+   * @example {RenderInputsFields}
   */
-  const InputFields = () => fields.map((field) => {
+  const RenderInputsFields = fields.map((field) => {
     const isPassword = field.type === 'password'
     const { type } = field
     
@@ -48,7 +47,7 @@ export const Form = ({ onSubmit, handleChange, fields, submitActive, mode, textS
 
   return (
     <form onSubmit={onSubmit} className="max-w-[320px]">
-      {<InputFields />}
+      {RenderInputsFields}
       {mode === 'login' && (
         <>
           <div className="text-primary-default text-sm font-bold text-right">
